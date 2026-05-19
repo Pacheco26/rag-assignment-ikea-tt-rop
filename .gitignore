@@ -1,0 +1,52 @@
+# Environment
+.env
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data (PDFs are large)
+corpus/raw/*.pdf
+corpus/ikea_test/
+corpus/raw_backup/
+
+# ChromaDB persistent storage
+chroma_db/
+.chromadb/
+
+# BM25 cache
+.bm25_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+_ul
+nul
+
+# Jupyter
+.ipynb_checkpoints/
+
+# LaTeX build artifacts
+report/*.aux
+report/*.log
+report/*.out
+report/*.bbl
+report/*.blg
+report/*.synctex.gz
+
+# Results figures can be regenerated
+# results/figures/
