@@ -1,0 +1,30 @@
+{
+  "taxonomy": {
+    "Storage & Organization": {
+      "description": "Shelving, bookcases, modular storage, and organizational solutions",
+      "product_series": ["BILLY", "KALLAX", "BESTA", "EKET"],
+      "docs": ["D01", "D03", "D04", "D13"]
+    },
+    "Bedroom & Wardrobe": {
+      "description": "Beds, mattresses, wardrobes, and bedroom furniture",
+      "product_series": ["PAX", "HEMNES", "Various"],
+      "docs": ["D02", "D05", "D06", "D14", "D20"]
+    },
+    "Kitchen & Dining": {
+      "description": "Kitchen cabinets, kitchen planning, and kitchen storage",
+      "product_series": ["SEKTION", "KUNGSFORS", "Various"],
+      "docs": ["D07", "D11", "D19"]
+    },
+    "Living & Outdoor": {
+      "description": "Sofas, living room furniture, and outdoor furniture",
+      "product_series": ["HEMNES", "KIVIK", "BONDHOLMEN", "EKTORP"],
+      "docs": ["D08", "D09", "D10", "D16"]
+    },
+    "Home & Sustainability": {
+      "description": "Design guides, laundry solutions, bathroom installation, sustainability",
+      "product_series": ["Various"],
+      "docs": ["D12", "D15", "D17", "D18"]
+    }
+  },
+  "focus": "IKEA buying guides covering furniture selection, planning, specifications, materials, assembly, and care instructions"
+}

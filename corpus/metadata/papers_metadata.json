@@ -1,0 +1,162 @@
+[
+  {
+    "doc_id": "D01",
+    "title": "BILLY Bookcase Buying Guide",
+    "product_series": "BILLY",
+    "category": "Storage & Organization",
+    "type": "buying_guide",
+    "source": "IKEA USA"
+  },
+  {
+    "doc_id": "D02",
+    "title": "PAX Wardrobe System Buying Guide",
+    "product_series": "PAX",
+    "category": "Bedroom & Wardrobe",
+    "type": "buying_guide",
+    "source": "IKEA USA"
+  },
+  {
+    "doc_id": "D03",
+    "title": "KALLAX Shelving Unit Buying Guide",
+    "product_series": "KALLAX",
+    "category": "Storage & Organization",
+    "type": "buying_guide",
+    "source": "IKEA USA"
+  },
+  {
+    "doc_id": "D04",
+    "title": "BESTA Storage System Buying Guide",
+    "product_series": "BESTA",
+    "category": "Storage & Organization",
+    "type": "buying_guide",
+    "source": "IKEA USA"
+  },
+  {
+    "doc_id": "D05",
+    "title": "Mattress Buying Guide",
+    "product_series": "Various",
+    "category": "Bedroom & Wardrobe",
+    "type": "buying_guide",
+    "source": "IKEA USA"
+  },
+  {
+    "doc_id": "D06",
+    "title": "Beds Buying Guide",
+    "product_series": "Various",
+    "category": "Bedroom & Wardrobe",
+    "type": "buying_guide",
+    "source": "IKEA USA"
+  },
+  {
+    "doc_id": "D07",
+    "title": "SEKTION Kitchen Cabinets Buying Guide",
+    "product_series": "SEKTION",
+    "category": "Kitchen & Dining",
+    "type": "buying_guide",
+    "source": "IKEA USA"
+  },
+  {
+    "doc_id": "D08",
+    "title": "HEMNES Living Room Buying Guide",
+    "product_series": "HEMNES",
+    "category": "Living & Outdoor",
+    "type": "buying_guide",
+    "source": "IKEA USA"
+  },
+  {
+    "doc_id": "D09",
+    "title": "KIVIK Sofa Buying Guide",
+    "product_series": "KIVIK",
+    "category": "Living & Outdoor",
+    "type": "buying_guide",
+    "source": "IKEA USA"
+  },
+  {
+    "doc_id": "D10",
+    "title": "BONDHOLMEN Outdoor Furniture Buying Guide",
+    "product_series": "BONDHOLMEN",
+    "category": "Living & Outdoor",
+    "type": "buying_guide",
+    "source": "IKEA USA"
+  },
+  {
+    "doc_id": "D11",
+    "title": "Kitchen Planning Guide",
+    "product_series": "Various",
+    "category": "Kitchen & Dining",
+    "type": "planning_guide",
+    "source": "IKEA Canada"
+  },
+  {
+    "doc_id": "D12",
+    "title": "IKEA Style Guide 2025",
+    "product_series": "Various",
+    "category": "Home & Sustainability",
+    "type": "style_guide",
+    "source": "IKEA Global"
+  },
+  {
+    "doc_id": "D13",
+    "title": "EKET Storage System Buying Guide",
+    "product_series": "EKET",
+    "category": "Storage & Organization",
+    "type": "buying_guide",
+    "source": "IKEA Global"
+  },
+  {
+    "doc_id": "D14",
+    "title": "HEMNES Bedroom Buying Guide",
+    "product_series": "HEMNES",
+    "category": "Bedroom & Wardrobe",
+    "type": "buying_guide",
+    "source": "IKEA Global"
+  },
+  {
+    "doc_id": "D15",
+    "title": "Laundry Solutions Buying Guide",
+    "product_series": "Various",
+    "category": "Home & Sustainability",
+    "type": "buying_guide",
+    "source": "IKEA Global"
+  },
+  {
+    "doc_id": "D16",
+    "title": "EKTORP Sofa Buying Guide",
+    "product_series": "EKTORP",
+    "category": "Living & Outdoor",
+    "type": "buying_guide",
+    "source": "IKEA USA"
+  },
+  {
+    "doc_id": "D17",
+    "title": "Circular Product Design Guide",
+    "product_series": "Various",
+    "category": "Home & Sustainability",
+    "type": "design_guide",
+    "source": "IKEA Global"
+  },
+  {
+    "doc_id": "D18",
+    "title": "Bathroom Installation Guide",
+    "product_series": "Various",
+    "category": "Home & Sustainability",
+    "type": "installation_guide",
+    "source": "IKEA Global"
+  },
+  {
+    "doc_id": "D19",
+    "title": "KUNGSFORS Kitchen System Buying Guide",
+    "product_series": "KUNGSFORS",
+    "category": "Kitchen & Dining",
+    "type": "buying_guide",
+    "source": "IKEA USA"
+  },
+  {
+    "doc_id": "D20",
+    "title": "PAX Wardrobe Planner Guide",
+    "product_series": "PAX",
+    "category": "Bedroom & Wardrobe",
+    "type": "buying_guide",
+    "source": "IKEA USA"
+  }
+]
