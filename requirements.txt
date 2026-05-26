@@ -1,3 +1,6 @@
+# RAG Framework
+llama-index-core>=0.11.0
+
 # LLM API (Groq uses OpenAI-compatible client)
 openai>=1.30.0
 
@@ -6,6 +9,9 @@ chromadb>=0.5.0
 
 # PDF Processing
 PyMuPDF>=1.24.0
+
+# BM25
+rank-bm25>=0.2.2
 
 # Embeddings
 sentence-transformers>=3.0.0
