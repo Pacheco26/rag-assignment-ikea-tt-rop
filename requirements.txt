@@ -13,12 +13,21 @@ PyMuPDF>=1.24.0
 # BM25
 rank-bm25>=0.2.2
 
-# Embeddings
+# Embeddings & Text Mining
 sentence-transformers>=3.0.0
+keybert>=0.8.0
+bertopic>=0.16.0
+scikit-learn>=1.5.0
+hdbscan>=0.8.36
+umap-learn>=0.5.5
 
 # Data
 pandas>=2.2.0
 numpy>=1.26.0
+
+# Visualization
+matplotlib>=3.9.0
+plotly>=5.22.0
 
 # Demo UI
 streamlit>=1.35.0

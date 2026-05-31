@@ -50,6 +50,15 @@ MAX_TOKENS = 1024
 TEMPERATURE = 0.1
 CONFIDENCE_THRESHOLD = 0.3   # below this, trigger refusal
 
+# -- Text Mining ---------------------------------------------------------------
+KEYBERT_MODEL = "all-MiniLM-L6-v2"
+KEYPHRASE_NGRAM_RANGE = (1, 3)
+KEYPHRASE_TOP_N = 10
+MMR_DIVERSITY = 0.7
+
+BERTOPIC_MIN_TOPIC_SIZE = 3
+BERTOPIC_NR_TOPICS = "auto"
+
 # -- Evaluation ----------------------------------------------------------------
 EVAL_TOP_K_VALUES = [3, 5, 10]
 NUM_TEST_QUERIES = 30
