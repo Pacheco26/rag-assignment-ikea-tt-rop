@@ -1,0 +1,53 @@
+{
+  "fixed_size": {
+    "num_chunks": 311,
+    "avg_tokens": 237.491961414791,
+    "min_tokens": 3,
+    "max_tokens": 527,
+    "intrinsic_metrics": {
+      "icc_mean": 0.38019381406172803,
+      "icc_std": 0.18736265802512936,
+      "icd": 0.37645555765490335,
+      "sc": 0.45884872122224085,
+      "bc": 0.5798879849225885,
+      "num_chunks": 100,
+      "avg_tokens": 228.28,
+      "total_tokens": 22828
+    },
+    "build_time_seconds": 44.58388328552246
+  },
+  "semantic": {
+    "num_chunks": 274,
+    "avg_tokens": 292.63868613138686,
+    "min_tokens": 3,
+    "max_tokens": 3493,
+    "intrinsic_metrics": {
+      "icc_mean": 0.2584034264125459,
+      "icc_std": 0.1326170906122481,
+      "icd": 0.4234273838951732,
+      "sc": 1.3144943694551716,
+      "bc": 0.9315336406938826,
+      "num_chunks": 100,
+      "avg_tokens": 315.87,
+      "total_tokens": 31587
+    },
+    "build_time_seconds": 77.39801907539368
+  },
+  "hierarchical": {
+    "num_chunks": 1369,
+    "avg_tokens": 56.16581446311176,
+    "min_tokens": 1,
+    "max_tokens": 132,
+    "intrinsic_metrics": {
+      "icc_mean": 0.5728080287481259,
+      "icc_std": 0.3388121383993909,
+      "icd": 0.4461397460915826,
+      "sc": 0.5825814277207043,
+      "bc": 0.4692337467062353,
+      "num_chunks": 100,
+      "avg_tokens": 53.55,
+      "total_tokens": 5355
+    },
+    "build_time_seconds": 32.62126803398132
+  }
+}
