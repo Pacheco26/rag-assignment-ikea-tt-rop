@@ -90,11 +90,11 @@ python scripts/run_evaluation.py
 
 30 queries (10 factual, 10 comparative, 10 thematic) evaluated across all 3 strategies:
 
-| Strategy | MRR | nDCG@5 | Recall@5 | Correctness | Faithfulness | Citation F1 |
-|---|---|---|---|---|---|---|
-| **Fixed-Size** | **0.811** | **0.663** | **0.670** | **0.642** | 0.773 | 0.506 |
-| Semantic | 0.781 | 0.649 | 0.652 | 0.620 | **0.802** | **0.520** |
-| Hierarchical | 0.656 | 0.561 | 0.578 | 0.530 | 0.773 | 0.371 |
+| Strategy | MRR | nDCG@5 | Recall@5 | Prec@5 | Correctness | Faithfulness | Completeness | Citation F1 |
+|---|---|---|---|---|---|---|---|---|
+| **Fixed-Size** | **0.811** | **0.663** | **0.670** | **0.463** | **0.642** | 0.773 | **0.533** | 0.506 |
+| Semantic | 0.781 | 0.649 | 0.652 | 0.436 | 0.620 | **0.802** | 0.513 | **0.520** |
+| Hierarchical | 0.656 | 0.561 | 0.578 | 0.437 | 0.530 | 0.773 | 0.390 | 0.371 |
 
 The fixed-size strategy performs best overall on retrieval and correctness. Semantic chunking achieves the highest faithfulness and citation accuracy. The hierarchical approach underperforms on this corpus, likely because IKEA guides have relatively flat document structure where the parent-child separation adds noise without benefit.
 
@@ -104,7 +104,7 @@ The fixed-size strategy performs best overall on retrieval and correctness. Sema
 2. **Topic Modelling** -- BERTopic on chunks, with taxonomy alignment
 3. **Clustering** -- KMeans/HDBSCAN with UMAP visualization
 4. **Taxonomy Classification** -- Embedding-based classification into 5 IKEA product categories
-5. **Summarization** -- Extractive + abstractive (map-reduce via LLM)
+5. **Summarization** -- Abstractive map-reduce via LLM
 
 ## Limitations
 

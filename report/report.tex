@@ -35,7 +35,7 @@ Porto, Portugal \\
 \maketitle
 
 \begin{abstract}
-We present FurnishRAG, a Retrieval-Augmented Generation system designed to answer questions about IKEA furniture products using a corpus of 20 buying guides. The system implements hybrid retrieval combining dense vector search with BM25 scoring through Reciprocal Rank Fusion, and compares three chunking strategies: fixed-size (512 tokens), semantic (embedding-based breakpoints), and hierarchical parent-child (128/1024 tokens). We evaluate all strategies across 30 gold-standard queries spanning factual, comparative, and thematic categories, measuring retrieval quality (MRR, nDCG@5, Recall@5), answer quality (correctness, faithfulness), and intrinsic chunk metrics (ICC, ICD). Results show that fixed-size chunking achieves the best overall retrieval (MRR\,=\,0.811) and answer correctness (0.642), while semantic chunking leads in faithfulness (0.802). The hierarchical approach underperforms on this corpus (MRR\,=\,0.656), which we attribute to the flat document structure of buying guides. We also integrate five text mining features---keyword extraction, topic modelling, clustering, taxonomy classification, and summarization---to provide exploratory analysis beyond basic question answering.
+We present FurnishRAG, a Retrieval-Augmented Generation system designed to answer questions about IKEA furniture products using a corpus of 20 buying guides. The system implements hybrid retrieval combining dense vector search with BM25 scoring through Reciprocal Rank Fusion, and compares three chunking strategies: fixed-size (512 tokens), semantic (embedding-based breakpoints), and hierarchical parent-child (128/1024 tokens). We evaluate all strategies across 30 gold-standard queries spanning factual, comparative, and thematic categories, measuring retrieval quality (MRR, nDCG@5, Recall@5, Precision@5), answer quality (correctness, faithfulness, completeness), and intrinsic chunk metrics (ICC, ICD). Results show that fixed-size chunking achieves the best overall retrieval (MRR\,=\,0.811) and answer correctness (0.642), while semantic chunking leads in faithfulness (0.802). The hierarchical approach underperforms on this corpus (MRR\,=\,0.656), which we attribute to the flat document structure of buying guides. We also integrate five text mining features---keyword extraction, topic modelling, clustering, taxonomy classification, and summarization---to provide exploratory analysis beyond basic question answering.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -278,7 +278,7 @@ We implement an embedding-based classifier that assigns each chunk to one of the
 
 \subsection{Summarization}
 
-We implement extractive-abstractive summarization using a map-reduce approach. For retrieved chunks, the summarizer first generates a per-chunk summary, then combines these into a coherent synthesis focused on the user's query. For full-document summarization, it summarizes each section independently (map step) and then merges the section summaries into a document-level summary (reduce step). The LLM (via Groq) handles the abstractive generation.
+We implement abstractive summarization using a map-reduce approach. For retrieved chunks, the summarizer first generates a per-chunk summary via the LLM, then combines these into a coherent synthesis focused on the user's query. For full-document summarization, it summarizes each section independently (map step) and then merges the section summaries into a document-level summary (reduce step). The LLM (via Groq) handles all generation steps.
 
 \subsection{Integrated Example}
 
@@ -309,7 +309,6 @@ We measure performance along two axes:
     \item \textit{nDCG@5}: ranking quality of the top-5 results
     \item \textit{Recall@5}: fraction of relevant documents found in top-5
     \item \textit{Precision@5}: fraction of top-5 results that are relevant
-    \item \textit{Source Coverage}: fraction of gold-standard documents retrieved
 \end{itemize}
 
 \textbf{Answer quality} (using LLM-as-judge~\cite{b7} with the same Groq model):
@@ -327,24 +326,25 @@ Table~\ref{tab:results} presents the main results.
 \begin{table}[htbp]
 \caption{Evaluation Results: 30 queries $\times$ 3 strategies}
 \begin{center}
-\begin{tabular}{lcccccc}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccccccc}
 \toprule
-\textbf{Strategy} & \textbf{MRR} & \textbf{nDCG} & \textbf{Rec@5} & \textbf{Corr.} & \textbf{Faith.} & \textbf{Cit. F1} \\
+\textbf{Strategy} & \textbf{MRR} & \textbf{nDCG} & \textbf{R@5} & \textbf{P@5} & \textbf{Corr.} & \textbf{Faith.} & \textbf{Compl.} & \textbf{Cit.F1} \\
 \midrule
-Fixed-Size & \textbf{0.811} & \textbf{0.663} & \textbf{0.670} & \textbf{0.642} & 0.773 & 0.506 \\
-Semantic & 0.781 & 0.649 & 0.652 & 0.620 & \textbf{0.802} & \textbf{0.520} \\
-Hierarchical & 0.656 & 0.561 & 0.578 & 0.530 & 0.773 & 0.371 \\
+Fixed-Size & \textbf{0.811} & \textbf{0.663} & \textbf{0.670} & \textbf{0.463} & \textbf{0.642} & 0.773 & \textbf{0.533} & 0.506 \\
+Semantic & 0.781 & 0.649 & 0.652 & 0.436 & 0.620 & \textbf{0.802} & 0.513 & \textbf{0.520} \\
+Hierarchical & 0.656 & 0.561 & 0.578 & 0.437 & 0.530 & 0.773 & 0.390 & 0.371 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \label{tab:results}
 \end{center}
 \end{table}
 
-\textbf{Fixed-size} achieves the best retrieval (MRR\,=\,0.811) and correctness (0.642). Its consistent chunk sizes produce reliable retrieval behavior.
+\textbf{Fixed-size} achieves the best retrieval (MRR\,=\,0.811) and correctness (0.642), along with the highest completeness (0.533). Its consistent chunk sizes produce reliable retrieval behavior. Precision@5 is moderate (0.463) because queries with a single gold document still retrieve 5 chunks.
 
 \textbf{Semantic} chunking is close to fixed-size in retrieval and achieves the highest faithfulness (0.802) and citation F1 (0.520). The semantically coherent chunks may help the LLM stay grounded in the context.
 
-\textbf{Hierarchical} underperforms on all retrieval metrics. We discuss why in Section~VIII.
+\textbf{Hierarchical} underperforms on all retrieval and answer quality metrics, including completeness (0.390). We discuss why in Section~VIII.
 
 \subsection{Per-Category Breakdown}
 
@@ -419,6 +419,7 @@ We identified 7 experiments with correctness below 0.3. Two failure patterns eme
     \item \textbf{LLM-as-judge bias:} We use the same model for generation and evaluation, which may introduce systematic bias. Human evaluation would provide more reliable quality assessments.
     \item \textbf{Corpus scope:} 20 buying guides covers the main product lines but not the full IKEA catalog. Scaling to hundreds of documents would test the system's retrieval robustness.
     \item \textbf{No re-ranking:} A cross-encoder re-ranker between retrieval and generation could improve precision, especially for comparative queries that need multiple relevant documents.
+    \item \textbf{Citation extraction:} The regex used to extract document citations also matches dimension strings in product specifications (e.g., ``D38'' from depth measurements), which slightly inflates the incorrect citation count and deflates citation precision.
 \end{itemize}
 
 \begin{figure}[htbp]

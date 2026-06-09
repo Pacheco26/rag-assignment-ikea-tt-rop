@@ -14,7 +14,7 @@
       "avg_tokens": 228.28,
       "total_tokens": 22828
     },
-    "build_time_seconds": 44.58388328552246
+    "build_time_seconds": 58.887789487838745
   },
   "semantic": {
     "num_chunks": 274,
@@ -31,7 +31,7 @@
       "avg_tokens": 315.87,
       "total_tokens": 31587
     },
-    "build_time_seconds": 77.39801907539368
+    "build_time_seconds": 140.27132034301758
   },
   "hierarchical": {
     "num_chunks": 1369,
@@ -48,6 +48,6 @@
       "avg_tokens": 53.55,
       "total_tokens": 5355
     },
-    "build_time_seconds": 32.62126803398132
+    "build_time_seconds": 80.9684989452362
   }
 }
