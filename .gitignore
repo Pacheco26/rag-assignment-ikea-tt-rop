@@ -34,7 +34,6 @@ chroma_db/
 # OS
 .DS_Store
 Thumbs.db
-_ul
 nul
 
 # Jupyter

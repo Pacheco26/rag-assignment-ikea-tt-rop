@@ -95,11 +95,3 @@ class HierarchicalChunker(BaseChunker):
             f"avg child {sum(c.token_count for c in all_chunks) / max(num_children, 1):.0f} tokens)"
         )
         return all_chunks
-
-    def get_parent_chunks(self, children: list[Chunk]) -> dict[str, str]:
-        """Extract unique parent texts from child chunks. Returns {parent_id: parent_text}."""
-        parents = {}
-        for child in children:
-            if child.parent_id and child.parent_text:
-                parents[child.parent_id] = child.parent_text
-        return parents

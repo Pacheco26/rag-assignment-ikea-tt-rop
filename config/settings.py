@@ -14,7 +14,6 @@ CORPUS_METADATA = PROJECT_ROOT / "corpus" / "metadata"
 CHROMA_DB_PATH = PROJECT_ROOT / "chroma_db"
 RESULTS_DIR = PROJECT_ROOT / "results"
 FIGURES_DIR = RESULTS_DIR / "figures"
-MODELS_DIR = PROJECT_ROOT / "models"
 
 # -- LLM Provider (Groq — free) -----------------------------------------------
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
@@ -57,12 +56,3 @@ KEYPHRASE_TOP_N = 10
 MMR_DIVERSITY = 0.7
 
 BERTOPIC_MIN_TOPIC_SIZE = 3
-BERTOPIC_NR_TOPICS = "auto"
-
-# -- Evaluation ----------------------------------------------------------------
-EVAL_TOP_K_VALUES = [3, 5, 10]
-NUM_TEST_QUERIES = 30
-
-# -- Document metadata ---------------------------------------------------------
-DOC_IDS = [f"D{str(i).zfill(2)}" for i in range(1, 21)]
-NUM_DOCS = 20
