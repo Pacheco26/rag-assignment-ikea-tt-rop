@@ -4,7 +4,6 @@ Integrates RAG pipeline with text mining analysis on retrieved results:
 keyword extraction, summarization, diversity scoring, taxonomy classification.
 """
 
-import json
 import sys
 from pathlib import Path
 
@@ -155,12 +154,9 @@ with col2:
     top_k = st.slider("Top-K", 3, 10, TOP_K)
     compare_all = st.checkbox("Compare all strategies")
 
-# query input
-query = st.text_area(
-    "Your Question",
-    placeholder="e.g., What dimensions are available for the PAX wardrobe system?",
-    height=100,
-)
+# Initialize session state for example queries
+if "example_query" not in st.session_state:
+    st.session_state.example_query = ""
 
 # examples
 with st.expander("Example Queries"):
@@ -172,7 +168,19 @@ with st.expander("Example Queries"):
     ]
     for ex in examples:
         if st.button(ex, key=f"ex_{ex[:20]}"):
-            query = ex
+            st.session_state.example_query = ex
+
+# query input
+query = st.text_area(
+    "Your Question",
+    value=st.session_state.example_query,
+    placeholder="e.g., What dimensions are available for the PAX wardrobe system?",
+    height=100,
+)
+
+# Clear example after use
+if st.session_state.example_query and query == st.session_state.example_query:
+    st.session_state.example_query = ""
 
 # run query
 if st.button("Ask", type="primary", disabled=not query):

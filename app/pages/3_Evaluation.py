@@ -199,11 +199,20 @@ with tab4:
             })
         st.dataframe(pd.DataFrame(rows), use_container_width=True)
 
-        # Bar chart comparison
+        # Bar chart comparison (use numeric values, not formatted strings)
+        chart_rows = []
+        for strategy, data in chunking_data.items():
+            metrics = data.get("intrinsic_metrics", {})
+            chart_rows.append({
+                "Strategy": strategy,
+                "ICC (Coherence)": metrics.get("icc_mean", 0),
+                "ICD (Distinctiveness)": metrics.get("icd", 0),
+                "BC (Boundary Clarity)": metrics.get("bc", 0),
+            })
         metric_cols = ["ICC (Coherence)", "ICD (Distinctiveness)", "BC (Boundary Clarity)"]
-        df = pd.DataFrame(rows)
+        chart_df = pd.DataFrame(chart_rows)
         fig = px.bar(
-            df.melt(id_vars="Strategy", value_vars=metric_cols,
+            chart_df.melt(id_vars="Strategy", value_vars=metric_cols,
                      var_name="Metric", value_name="Score"),
             x="Metric", y="Score", color="Strategy",
             barmode="group",
