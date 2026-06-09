@@ -62,7 +62,6 @@ class VectorStore:
             metadatas.append(meta)
 
         # Add in batches (ChromaDB limit is ~5000 per batch)
-        # TODO: could parallelize batches if corpus grows much larger
         batch_size = 500
         for i in range(0, len(ids), batch_size):
             end = min(i + batch_size, len(ids))

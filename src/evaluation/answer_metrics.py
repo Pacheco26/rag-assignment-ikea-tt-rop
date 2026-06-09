@@ -131,7 +131,7 @@ class AnswerMetrics:
     ) -> dict:
         """Check if cited documents match expected relevant ones."""
         # Extract citations from answer
-        cited = set(re.findall(r'\[?(D\d{2})\]?', answer))
+        cited = set(re.findall(r'\[?(D(?:0[1-9]|1[0-9]|20))\]?', answer))
         relevant = set(relevant_paper_ids)
 
         correct_citations = cited & relevant

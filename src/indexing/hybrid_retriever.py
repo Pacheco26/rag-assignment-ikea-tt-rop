@@ -66,6 +66,10 @@ class HybridRetriever:
                 scores[doc_id]["rrf_score"] += bm25_rrf
                 scores[doc_id]["bm25_rank"] = rank
                 scores[doc_id]["bm25_score"] = result["score"]
+                # Transfer parent info from BM25 chunk if not already set
+                if chunk.parent_id and "parent_text" not in scores[doc_id]:
+                    scores[doc_id]["metadata"]["parent_id"] = chunk.parent_id
+                    scores[doc_id]["parent_text"] = chunk.parent_text
             else:
                 scores[doc_id] = {
                     "rrf_score": bm25_rrf,
