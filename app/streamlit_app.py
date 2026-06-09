@@ -47,7 +47,7 @@ st.sidebar.info(
     **FurnishRAG** — MINTRI Phase 2
 
     Authors: Tatiana Teixeira & Rodrigo Pacheco
-    Course: MEDados, ISEP
+    Course: MEI, ISEP
 
     Corpus: 20 IKEA buying guides
     """
