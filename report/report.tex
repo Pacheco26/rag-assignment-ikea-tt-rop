@@ -110,6 +110,22 @@ We use \textbf{ChromaDB}~\cite{b9} as the vector store because it supports persi
 
 The system is implemented in Python without relying on a high-level RAG framework (e.g., LangChain) for the core pipeline. We use LlamaIndex only for its \texttt{SentenceSplitter} tokenizer in the chunking module. This gives us full control over the retrieval and generation logic, which is important for the chunking comparison experiment.
 
+\subsection{Prototype and Installation}
+
+The full source code is available on GitHub\footnote{\url{https://github.com/Pacheco26/rag-assignment-ikea-tt-rop}}. To install and run the system:
+
+\begin{enumerate}
+    \item Clone the repository and create a virtual environment: \texttt{python -m venv venv} followed by activation.
+    \item Install dependencies: \texttt{pip install -r requirements.txt}.
+    \item Create a \texttt{.env} file from \texttt{.env.example} and add a free Groq API key (from \texttt{console.groq.com}).
+    \item Ingest the corpus: \texttt{python scripts/ingest\_corpus.py}.
+    \item Build the vector and BM25 indices: \texttt{python scripts/build\_index.py}.
+    \item Run the evaluation: \texttt{python scripts/run\_evaluation.py}.
+    \item Launch the interactive demo: \texttt{streamlit run app/streamlit\_app.py}.
+\end{enumerate}
+
+The repository includes the processed corpus, pre-computed evaluation results, and a Streamlit dashboard with three pages: Query (interactive Q\&A), Explorer (corpus analysis with text mining), and Evaluation (results visualization).
+
 % ============================================================
 \section{Corpus and Data Preparation}
 
